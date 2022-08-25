@@ -1,0 +1,45 @@
+body {
+  background: #222;
+  font-family: "Helvetica Neue";
+  margin: 0;
+  padding: 0;
+}
+
+label {
+  color: #666;
+  display: block;
+  font-size: 1em;
+  font-weight: bold;
+  padding: 5px 0;
+}
+
+input {
+  background: rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #CCC;
+  font-size: 1em;
+  padding: 0.8em;
+  width: 90%;
+}
+
+button {
+  background: blue;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: #FFF;
+  font-size: 1em;
+  padding: 0.5em 2em;
+}
+
+.answer {
+  color: #CCC;
+  font-size: 2em;
+}
+
+.input {
+  margin: 0 0 1em;
+}
+
+.content {
+  padding: 1em 2em;
+  overflow: hidden;
+}
