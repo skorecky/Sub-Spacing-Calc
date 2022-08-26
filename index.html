@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Sub Layout Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
@@ -51,7 +52,8 @@
     var calculate_center_spacing = function(stage_width, sub_width, sub_stacks){
       var sub_spacing = sub_spaces(sub_stacks);
       var total_sub_width_val = total_sub_width(sub_width, sub_stacks);
-      return ((stage_width - total_sub_width_val) / sub_spacing) + (sub_width / 2) ;
+      var rtn_val = ((stage_width - total_sub_width_val) / sub_spacing) + parseInt(sub_width);
+      return isNaN(rtn_val) ? 0 : rtn_val
     };
 
     document.querySelector("button").addEventListener("click", function(){
@@ -62,7 +64,7 @@
       var center_spacing_val = calculate_center_spacing(stage_width, sub_width, sub_stacks);
       var output = spacing_val + " inches"
           output += "<br/>"
-          output += center_spacing_val + " inches"
+          output += center_spacing_val + " inches (center to center)"
       document.querySelector(".answer").innerHTML = output;
     });
   </script>
