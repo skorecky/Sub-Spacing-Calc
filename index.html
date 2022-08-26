@@ -8,64 +8,31 @@
   </head>
   <body>
     <section class="content">
-      <div class="input">
-        <label for="stage_width">Stage Width</label>
-        <input type="text" name="stage_width" value="" placeholder="Total Inches">
-      </div>
+      <form>
+        <div class="input">
+          <label for="stage_width">Stage Width</label>
+          <input type="text" name="stage_width" value="" placeholder="Total Inches">
+        </div>
 
-      <div class="input">
-        <label for="sub_width">Sub Width</label>
-        <input type="text" name="sub_width" value="" placeholder="Total Inches">
-      </div>
+        <div class="input">
+          <label for="sub_width">Sub Width</label>
+          <input type="text" name="sub_width" value="" placeholder="Total Inches">
+        </div>
 
-      <div class="input">
-        <label for="sub_stacks">Sub Stacks</label>
-        <input type="text" name="sub_stacks" value="" placeholder="How Many Columns">
-      </div>
+        <div class="input">
+          <label for="sub_stacks">Sub Stacks</label>
+          <input type="text" name="sub_stacks" value="" placeholder="How Many Columns">
+        </div>
 
-      <div class="input button">
-        <button type="button" name="button">Calculate</button>
-      </div>
+        <div class="input button">
+          <input type="submit" name="submit" class="submit"/>
+        </div>
 
-      <div class="answer">
+        <div class="answer">
 
-      </div>
+        </div>
+      </form>
     </section>
   </body>
-  <script type="text/javascript">
-    WSX_WIDTH = 42
-
-    var total_sub_width = function(sub_width, sub_stacks){
-      return (sub_width * sub_stacks);
-    };
-
-    var sub_spaces = function(sub_stacks){
-      return (sub_stacks - 1)
-    }
-
-    var calculate_spacing = function(stage_width, sub_width, sub_stacks){
-      var sub_spacing = sub_spaces(sub_stacks);
-      var total_sub_width_val = total_sub_width(sub_width, sub_stacks);
-      return (stage_width - total_sub_width_val) / sub_spacing;
-    };
-
-    var calculate_center_spacing = function(stage_width, sub_width, sub_stacks){
-      var sub_spacing = sub_spaces(sub_stacks);
-      var total_sub_width_val = total_sub_width(sub_width, sub_stacks);
-      var rtn_val = ((stage_width - total_sub_width_val) / sub_spacing) + parseInt(sub_width);
-      return isNaN(rtn_val) ? 0 : rtn_val
-    };
-
-    document.querySelector("button").addEventListener("click", function(){
-      var stage_width = document.querySelector("input[name='stage_width']").value;
-      var sub_width = document.querySelector("input[name='sub_width']").value;
-      var sub_stacks = document.querySelector("input[name='sub_stacks']").value;
-      var spacing_val = calculate_spacing(stage_width, sub_width, sub_stacks);
-      var center_spacing_val = calculate_center_spacing(stage_width, sub_width, sub_stacks);
-      var output = spacing_val + " inches"
-          output += "<br/>"
-          output += center_spacing_val + " inches (center to center)"
-      document.querySelector(".answer").innerHTML = output;
-    });
-  </script>
+  <script type="text/javascript" src="logic.js"></script>
 </html>
