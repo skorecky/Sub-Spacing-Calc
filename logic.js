@@ -1,5 +1,3 @@
-WSX_WIDTH = 42
-
 var total_sub_width = function(sub_width, sub_stacks){
   return (sub_width * sub_stacks);
 };
