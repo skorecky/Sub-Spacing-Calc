@@ -28,11 +28,12 @@ input.form_input {
   color: #FFF;
   font-size: 1em;
   padding: 0.5em 2em;
+  width: 100%;
 }
 
 .answer {
   color: #CCC;
-  font-size: 2em;
+  font-size: 1.5em;
 }
 
 .input {

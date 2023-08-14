@@ -26,15 +26,15 @@ var calculate_center_spacing = function(stage_width, sub_width, sub_stacks){
 document.querySelector(".submit").addEventListener("click", function(e){
   e.preventDefault();
   var stage_width = document.querySelector("input[name='stage_width']").value;
-  var sub_width = document.querySelector("input[name='sub_width']").value;
-  var sub_stacks = document.querySelector("input[name='sub_stacks']").value;
+  var sub_width   = document.querySelector("input[name='sub_width']").value;
+  var sub_stacks  = document.querySelector("input[name='sub_stacks']").value;
   var spacing_val = calculate_spacing(stage_width, sub_width, sub_stacks);
   var center_spacing_val = calculate_center_spacing(stage_width, sub_width, sub_stacks);
   var starting_point = get_starting_point(sub_width);
-  var output = spacing_val + "\""
+  var output = spacing_val + "\" Between"
       output += "<br/>"
-      output += center_spacing_val + "\" (center to center)"
+      output += starting_point +"\" First Center Point"
       output += "<br/>"
-      output += "First center point " + starting_point +"\""
+      output += center_spacing_val + "\" Center to Center"
   document.querySelector(".answer").innerHTML = output;
 });
